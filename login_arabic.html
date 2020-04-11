@@ -1,0 +1,297 @@
+﻿
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar" class="back">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="VAT,return,form,accounting,accountant">
+    <meta name="author" content="Hanan Baotham, Nouf Alharbi, Reema Alshihri, Shahad Alghamdi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=dev ice-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>تسجيل الدخول</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman';
+            font-size: 15px;
+        }
+        /*background of page */
+        .back {
+            height: 100%;
+            width: 100%;
+            background-image: url('pic/main-page.png');
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+
+        /*the white box */
+        .form-box_start {
+            width: 380px;
+            height: 600px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            top: 50px;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 3px 5px 15px grey;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+
+        .button-box {
+            width: 220px;
+            margin: 35px auto;
+            position: relative;
+            box-shadow: 0 0 15px 9px #FCF3CF;
+            border-radius: 30px;
+        }
+
+        .toggle-btn {
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+            color: #02614D;
+        }
+
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: #CE9C2B;
+            border-radius: 30px;
+            transition: .5s;
+            border: groove;
+        }
+
+        .input-user {
+            top: 150px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+            color: #02614D;
+        }
+
+
+        .input-field {
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none;
+            background: transparent;
+        }
+
+        .submit-btn {
+            width: 70%;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            outline: none;
+            padding: 5px;
+            border-radius: 30px;
+            background-color: #CE9C2B;
+            color: #02614D;
+            text-align: center;
+            transition-duration: 0.5s;
+            line-height: 30px;
+            font-family: 'Times New Roman';
+            box-shadow: 0 0 15px 9px #FCF3CF;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+            .submit-btn:hover {
+                background-color: rgba(2, 67, 53, 0.90);
+                color: white;
+                border: 3px solid #CE9C2B;
+                transition: all 0.3s ease;
+                transform: scale(1.2);
+            }
+
+
+        .chech-box {
+            margin: 30px 0 0 165px;
+        }
+
+        .chech-radio {
+            margin: 30px 10px 30px 0;
+        }
+
+        .pass {
+            margin: 30px 10px 30px 0;
+            float: left;
+            text-decoration: none;
+        }
+
+        .chack {
+            color: #000000;
+            font-size: 12px;
+            bottom: 74px;
+            position: absolute;
+            left: 233px;
+        }
+
+        .p {
+            color: #000000;
+            font-size: 12px;
+            position: static;
+        }
+
+        .radiobnt {
+            color: #000000;
+            font-size: 12px;
+        }
+
+        #login {
+            left: 60px;
+        }
+
+        #register {
+            left: 650px;
+        }
+
+        .logo_hover:hover {
+            transform: scale(1.2);
+            transition: all 0.3s ease;
+        }
+        /*icon-bar-------------------------------------------*/
+
+
+        .icon-bar {
+            position: fixed;
+            top: 80%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            left: 15px;
+        }
+
+            .icon-bar a {
+                display: block;
+                text-align: center;
+                padding: 5px 8px 5px 8px;
+                transition: all 0.3s ease;
+                color: white;
+                font-family: 'Times New Roman';
+                border-radius: 20px;
+                color: #02614D;
+                box-shadow: 3px 5px 15px grey;
+                margin: 10px;
+                font-size: 40px;
+            }
+
+                .icon-bar a:hover {
+                    color: white;
+                    background-color: #CE9C2B;
+                    transition: all 0.3s ease;
+                    transform: scale(1.2);
+                }
+
+        .langueg {
+            position: absolute;
+            display: block;
+            border-radius: 15px;
+            font-size: 25px;
+            color: #02614D;
+            box-shadow: 3px 5px 15px #555555;
+            padding: 5px;
+            background: none;
+            left: 20px;
+            top: 20px;
+        }
+
+            .langueg:hover {
+                color: white;
+                background-color: #CE9C2B;
+                transition: all 0.4s ease;
+                transform: scale(1.2);
+            }
+    </style>
+</head>
+<body>
+
+
+    <div class="icon-bar">
+
+        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
+        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+    </div>
+
+    <button id="langueg" class="langueg">English</button>
+
+    <img src="pic/logo_no.png" alt="logo" style="width: 400px ;height:200px;display:block;position:absolute;padding-top:20px;padding-right:60px;" class="logo_hover" />
+
+    <div class="form-box_start">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn " onclick="register()">تسجيل جديد </button>
+            <button type="button" class="toggle-btn" onclick="login()">دخول</button>
+
+        </div>
+
+        <form id="login" class="input-user">
+            <input type="email" class="input-field" placeholder="البريد الإلكتروني" required>
+            <input type="Password" class="input-field" placeholder="كلمه السر" required>
+            <input type="checkbox" class="chech-box"><span class="chack">ذكرني </span>
+            <a href="#" class="pass"><span class="p">هل نسيت كلمة المرور؟</span></a>
+            <button type="submit" class="submit-btn">تسجيل الدخول</button>
+        </form>
+
+
+        <form id="register" class="input-user">
+            <input type="text" class="input-field" placeholder="اسم المنشأة" required>
+            <input type="text" class="input-field" placeholder="الرقم الضريبي" required>
+            <input type="number" class="input-field" placeholder="رقم الهاتف" required>
+            <input type="email" class="input-field" placeholder="البريد الإلكتروني" required>
+            <input type="Password" class="input-field" placeholder="كلمه السر" required>
+            <input type="Password" class="input-field" placeholder="تأكيد كلمة المرور" required>
+            &nbsp;
+            <p class="radiobnt1"> نوع الفترات الضريبية:</p>
+            <input type="radio" class="chech-radio"><span class="radiobnt">&nbsp;تقرير شهري</span>
+            <input type="radio" class="chech-radio"><span class="radiobnt">&nbsp;تقرير ربع سنوي</span>
+            <button type="submit" class="submit-btn">تسجيل</button>
+        </form>
+
+    </div>
+
+
+    <script type="text/javascript">
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px"
+            y.style.left = "50px"
+            z.style.left = "110px"
+        }
+
+        function login() {
+            x.style.left = "50px"
+            y.style.left = "550px"
+            z.style.left = "0px"
+        }</script>
+
+
+
+</body>
+</html>
