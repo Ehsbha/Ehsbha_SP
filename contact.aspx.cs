@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
@@ -29,6 +24,9 @@ namespace Ehsbha_SP
                     com = new SqlCommand(emailQ, conn);
                     email = Convert.ToString(com.ExecuteScalar());
                     conn.Close();
+                    TimeSpan t = home.lastDate - DateTime.Now;
+                    String countDown = "The remining time for VAT return form: " + string.Format("{0} Days, {1} Hours ", (t.Days + 1), (t.Hours + 1));
+                    timer.Text = countDown;
                 }
                 catch (Exception ex)
                 {
@@ -75,6 +73,10 @@ namespace Ehsbha_SP
         protected void summaryPage_Click(object sender, EventArgs e)
         {
             Response.Redirect("summary.aspx");
+        }
+        protected void contact_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("contact.aspx");
         }
         protected void sendEmail_Click(object sender, EventArgs e)
         {

@@ -24,6 +24,15 @@ namespace Ehsbha_SP
         protected global::System.Web.UI.WebControls.Label fName;
 
         /// <summary>
+        /// timer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label timer;
+
+        /// <summary>
         /// homePage control.
         /// </summary>
         /// <remarks>
@@ -382,5 +391,14 @@ namespace Ehsbha_SP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button preperVAT;
+
+        /// <summary>
+        /// Save control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Save;
     }
 }

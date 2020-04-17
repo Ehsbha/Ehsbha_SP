@@ -219,61 +219,51 @@
                 transition: all 0.3s ease;
                 transform: scale(1.2);
             }
+
+        .auto-style1 {
+            text-align: justify;
+        }
     </style>
-
-
-
 </head>
 <body style="background-color: rgba(215,233, 216,0.5); flex-grow: 0;">
 
-
-
-
     <div class="icon-bar">
-
-        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope" ></i></a>
-        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope"></i></a>
+        <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
     </div>
     <form runat="server">
-        <div style="background-color: rgba(2, 67, 53, 0.90); color: white; font-family: 'Times New Roman'; font-size: 15px; text-align: left; padding: 5px;">
+        <div style="background-color: rgba(2, 67, 53, 0.90); color: white; font-family: 'Times New Roman'; font-size: 15px; padding: 5px;" class="auto-style1">
 
             <asp:Label ID="fName" runat="server" Style="display: inline-block" Text=" "></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;
         
-
-
+        <asp:Label ID="timer" Style="display: inline-block; color: #e1c37f" runat="server"></asp:Label>
             <asp:Button ID="setting" class="logout" Style="right: 135px;" runat="server" Text="settings" OnClick="setting_Click" />
             <asp:Button ID="langueg" class="logout" Style="right: 80px;" runat="server" Text="عربي" OnClick="langueg_Click" />
             <asp:Button ID="logout" class="logout" Style="right: 10px;" runat="server" Text="log out" OnClick="logout_Click" />
-
         </div>
         <div class="div_header_img">
-
             <img src="pic/logo_back.png" alt="logo" style="width: 200px; height: 100px; display: block; position: absolute; margin-top: 25px; margin-left: 90px;" class="logo_hover" />
         </div>
-
         <div class="div_meneu" id="Header">
-
             <asp:Button ID="homePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="Home" OnClick="homePage_Click" />
             <asp:Button ID="addInvoicePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="Add invoice" OnClick="addInvoicePage_Click" />
             <asp:Button ID="formPage" class="menueButton" runat="server" Style="border-radius: 13px;" Text="VAT return form" OnClick="formPage_Click" />
             <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="Summary" OnClick="summaryPage_Click" />
             <asp:Button ID="contactPage" Class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="Contact us" OnClick="contactPage_Click" />
-
-
         </div>
         <div class="body_section">
-
             <div class="container">
                 <a href="addInvoice.aspx">
                     <img src="pic/invoic_icon.png" alt="Avatar" class="image">
                 </a>
                 <div class="overlay">Add incoices </div>
             </div>
-
-
             <div class="container">
                 <a href="form.aspx">
                     <img src="pic/form1_icon.png" alt="Avatar" class="image">
@@ -288,8 +278,5 @@
             </div>
         </div>
     </form>
-
-
-
 </body>
 </html>

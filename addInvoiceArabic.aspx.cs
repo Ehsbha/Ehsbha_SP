@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Ehsbha_SP
@@ -23,6 +18,9 @@ namespace Ehsbha_SP
                     SqlCommand com = new SqlCommand(name, conn);
                     fName.Text = "اسم المنشأة: " + Convert.ToString(com.ExecuteScalar());
                     conn.Close();
+                    TimeSpan t = home.lastDate - DateTime.Now;
+                    string countDown = " الوقت المتبقي لحساب الاقرار الضريبي :" + string.Format("{0} ايام , {1} ساعات ", (t.Days + 1), (t.Hours + 1));
+                    timer.Text = countDown;
                 }
                 catch (Exception ex)
                 {
@@ -121,9 +119,7 @@ namespace Ehsbha_SP
                 SqlCommand com = new SqlCommand(insert, conn);
                 com.Parameters.AddWithValue("@userId", Session["User"]);
                 com.Parameters.AddWithValue("@date", purchaseDate.Text);
-                float num = float.Parse(purchaseValue.Text);
-                string stringValue = num.ToString().Replace(',', '.');
-                com.Parameters.AddWithValue("@price", stringValue);
+                com.Parameters.AddWithValue("@price", purchaseValue.Text);
                 com.Parameters.AddWithValue("@classification", purchaseClassification.SelectedValue);
                 if (PurchaseAdjasment.Checked)
                 {

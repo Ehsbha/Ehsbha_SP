@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="startPageA.aspx.cs" Inherits="Ehsbha_SP.startPageA" UnobtrusiveValidationMode="None"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="startPageA.aspx.cs" Inherits="Ehsbha_SP.startPageA" UnobtrusiveValidationMode="None" %>
 
 <!DOCTYPE html>
 <html class="div1_main_img">
@@ -12,7 +12,6 @@
     <title>إجسبها</title>
 
     <style>
-
         /*general ------------------------------------------- */
         h1 {
             text-align: center;
@@ -25,7 +24,7 @@
             transition: all 0.3s ease;
         }
 
-     
+
 
         /* div ------------------------------------------- */
 
@@ -33,7 +32,7 @@
             background-image: url('pic/main-page.png');
             background-position: center;
             background-size: cover;
-            position:absolute;
+            position: absolute;
             height: 100%;
             width: 100%;
         }
@@ -145,54 +144,26 @@
                 transform: scale(1.2);
             }
     </style>
-
-
 </head>
 <body>
-
-
-
-
-        <form id="form1" runat="server">
-
-
-
-
+    <form id="form1" runat="server">
         <div class="icon-bar">
-
-            <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
-            <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-            <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+            <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
+            <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+            <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
         </div>
-
-            <asp:Button ID="langueg" class="langueg" runat="server" Text="English" OnClick="langueg_Click"/>
-
-        <img src="pic/logo_no.png" alt="logo" style="width: 400px ;height:200px;margin:0px auto 40px auto;display:block;text-align:center;padding-top:30px" class="logo_hover" />
-
-
-
+        <asp:Button ID="langueg" class="langueg" runat="server" Text="English" OnClick="langueg_Click" />
+        <img src="pic/logo_no.png" alt="logo" style="width: 400px; height: 200px; margin: 0px auto 40px auto; display: block; text-align: center; padding-top: 30px" class="logo_hover" />
         <div class="div_log_txt">
-            <h1>
-                -  إعداد نموذج إقرار ضريبة القيمة المضافة بسهولة ووضوح -
+            <h1>-  إعداد نموذج إقرار ضريبة القيمة المضافة بسهولة ووضوح -
             </h1>
-            <p style="font-size:20px;">
-                 إحسبها موقع لتسهيل حساب نموذج ضريبة القيمة المضافة لأصحاب المنشآت و المؤسسات الصغيرة والمتوسطة، مع توفير واجهة مستخدم سهلة الإستخدام ،واضحة المحتوى ومتعددة اللغات             </p>
+            <p style="font-size: 20px;">
+                إحسبها موقع لتسهيل حساب نموذج ضريبة القيمة المضافة لأصحاب المنشآت و المؤسسات الصغيرة والمتوسطة، مع توفير واجهة مستخدم سهلة الإستخدام ،واضحة المحتوى ومتعددة اللغات            
+            </p>
         </div>
         <div class="div_log_btn">
-
             <asp:Button ID="sign_button" class="sign-button" runat="server" Text="تسجيل الدخول" OnClick="login_Click" />
-
-            
-
         </div>
-
-
-
-
-        </form>
-
-
-
-
+    </form>
 </body>
 </html>

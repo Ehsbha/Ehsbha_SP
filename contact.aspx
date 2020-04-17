@@ -286,21 +286,8 @@
                 transform: scale(1.2);
             }
 
-        .auto-style1 {
-            position: absolute;
-            height: 9rem;
-            width: 23rem;
-            display: inline-flex;
-            justify-content: center;
-            margin-left: 40px;
-            margin-top: 15px;
-            color: #02614D;
-            left: 157px;
-            top: 58px;
-        }
-        .auto-style2 {
-            left: 0px;
-            top: -1px;
+        .auto-style3 {
+            text-align: justify;
         }
     </style>
 
@@ -314,16 +301,21 @@
 
         <div class="icon-bar">
 
-            <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope"></i></a>
-            <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-            <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+            <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope"></i></a>
+            <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+            <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
         </div>
-        <div style="background-color: rgba(2, 67, 53, 0.90); color: white; font-family: 'Times New Roman'; font-size: 15px; text-align: left; padding: 5px;">
+        <div style="background-color: rgba(2, 67, 53, 0.90); color: white; font-family: 'Times New Roman'; font-size: 15px; padding: 5px;" class="auto-style3">
 
             <asp:Label ID="fName" runat="server" Style="display: inline-block" Text=" " />
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<p style="display: inline-block">Time remaining to deliver VAT form</p>
-            :&nbsp;
-        <p id="timer" style="display: inline-block; color: #e1c37f"></p>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;
+        
+        <asp:Label id="timer" style="display: inline-block; color: #e1c37f" runAt="server"></asp:Label>
+
 
             <asp:Button ID="setting" class="logout" Style="right: 135px;" runat="server" Text="settings" OnClick="setting_Click" />
             <asp:Button ID="langueg" class="logout" Style="right: 80px;" runat="server" Text="عربي" OnClick="langueg_Click" />
@@ -337,11 +329,11 @@
         </div>
         <div class="div_meneu" id="Header">
 
-            <asp:Button ID="homePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="Home" />
-            <asp:Button ID="addInvoicePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="Add invoice" />
-            <asp:Button ID="formPage" class="menueButton" runat="server" Style="border-radius: 13px;" Text="VAT return form" />
-            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="Summary" />
-            <asp:Button ID="contactPage" Class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="Contact us" />
+            <asp:Button ID="homePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="Home" onclick="homePage_Click" />
+            <asp:Button ID="addInvoicePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="Add invoice" OnClick="addInvoicePage_Click" />
+            <asp:Button ID="formPage" class="menueButton" runat="server" Style="border-radius: 13px;" Text="VAT return form" OnClick="formPage_Click" />
+            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="Summary" OnClick="summaryPage_Click" />
+            <asp:Button ID="contactPage" Class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="Contact us" OnClick="contact_Click" />
 
         </div>
 
@@ -384,38 +376,6 @@
                 header.classList.remove("sticky");
             }
         }
-        /*================================================================================*/
-
-
-        // Set the date we're counting down to
-        var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-
-        // Update the count down every 1 second
-        var x = setInterval(function () {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-
-            // Output the result in an element with id="demo"
-            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-                + minutes + "m ";
-
-            // If the count down is over, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerHTML = "EXPIRED";
-            }
-        }, 1000);
-
-    </script>
+        </script>
 </body>
 </html>

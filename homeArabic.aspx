@@ -118,31 +118,31 @@
             z-index: 1;
         }
 
-            .menueButton{
-                background-color: #CE9C2B;
+        .menueButton {
+            background-color: #CE9C2B;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            line-height: 30px;
+            font-family: 'Times New Roman';
+            width: 33%;
+            position: relative;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+
+            .menueButton:hover {
+                background-color: rgba(2, 67, 53, 0.90);
                 color: white;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 18px;
-                transition-duration: 0.4s;
-                cursor: pointer;
-                line-height: 30px;
-                font-family: 'Times New Roman';
-                width: 33%;
-                position: relative;
-                margin-left: 4px;
-                margin-right: 4px;
+                border: 3px solid #CE9C2B;
+                transition: all 0.3s ease;
+                transform: scale(1.2);
             }
-
-
-                .menueButton:hover {
-                    background-color: rgba(2, 67, 53, 0.90);
-                    color: white;
-                    border: 3px solid #CE9C2B;
-                    transition: all 0.3s ease;
-                    transform: scale(1.2);
-                }
 
 
 
@@ -219,28 +219,31 @@
                 transition: all 0.3s ease;
                 transform: scale(1.2);
             }
+
+        .auto-style1 {
+            text-align: justify;
+        }
     </style>
 
 
 
 </head>
 <body style="background-color: rgba(215,233, 216,0.5);flex-grow : 0;">
-
-
-
-
     <div class="icon-bar">
 
-        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope" ></i></a>
-        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope" ></i></a>
+        <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
     </div>
     <form runat="server">
-    <div style="background-color: rgba(2, 67, 53, 0.90);color:white;font-family:'Times New Roman';font-size:15px;padding:5px;direction:rtl">
+    <div style="background-color: rgba(2, 67, 53, 0.90);color:white;font-family:'Times New Roman';font-size:15px;padding:5px;direction:rtl" class="auto-style1">
 
-        <asp:Label ID="fName" runat="server" style="display:inline-block;" Text=" "/>
-        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="fName" runat="server" style="display:inline-block;" Text=" " />
         
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <asp:Label id="timer" style="display: inline-block; color: #e1c37f" runAt="server"></asp:Label>
+
         <asp:Button runAt="server" type="button" class="logout" style=" left: 155px;" text="إعدادات" OnClick="setting_Click"/>
         <asp:Button runAt="server" type="button" class="logout" style=" left: 70px;" Text="English" OnClick="langueg_Click"/>
         <asp:Button runAt="server" type="button" class="logout" style=" left: 10px;" Text="خروج" OnClick="logout_Click"/>
@@ -255,7 +258,7 @@
     <asp:Button ID="homePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="الرئيسية" OnClick="homePage_Click" />
             <asp:Button ID="addInvoicePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="إضافة فواتير" OnClick="addInvoicePage_Click" />
             <asp:Button ID="formPage" class="menueButton" runat="server" Style="border-radius: 13px;" Text="نموذج الإقرار الضريبي" OnClick="formPage_Click" />
-            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="بيانات" OnClick="summaryPage_Click" />
+            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="الملخص" OnClick="summaryPage_Click" />
             <asp:Button ID="contactPage" Class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="تواصل معنا" OnClick="contactPage_Click" />
     
     </div>
@@ -267,8 +270,6 @@
             </a>
             <div class="overlay">إضافة الفواتير</div>
         </div>
-
-
         <div class="container">
             <a href="formArabic.aspx">
                 <img src="pic/form1_icon_a.png" alt="Avatar" class="image">
@@ -282,7 +283,6 @@
             <div class="overlay">الفواتير والنماذج السابقة</div>
         </div>
     </div>
-
         </form>
 
 </body>

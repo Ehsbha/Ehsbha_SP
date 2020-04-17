@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace Ehsbha_SP
 {
@@ -24,6 +17,10 @@ namespace Ehsbha_SP
                     SqlCommand com = new SqlCommand(name, conn);
                     fName.Text = "Facility Name: " + Convert.ToString(com.ExecuteScalar());
                     conn.Close();
+                    TimeSpan t = home.lastDate - DateTime.Now;
+                    home.countDown = "The remining time for VAT return form: " + string.Format("{0} Days, {1} Hours ", (t.Days + 1), (t.Hours + 1));
+                    timer.Text = home.countDown;
+
                 }
                 catch (Exception ex)
                 {
@@ -75,22 +72,6 @@ namespace Ehsbha_SP
         protected void contactPage_Click(object sender, EventArgs e)
         {
             Response.Redirect("contact.aspx");
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DialogResult msg = MessageBox.Show("Are you sure about deleting this invoice? ", "Delete invoice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (msg == DialogResult.Yes)
-            {
-                SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ehsbhaWebApp\Ehsbha_SP\Ehsbha_SP\App_Data\ehsbhaDB.mdf;Integrated Security=True");
-                conn.Open();
-                String facility = "delete from sale where userId='" + Session["User"].ToString() + "'";
-                SqlCommand com = new SqlCommand(facility, conn);
-                com.ExecuteNonQuery();
-                conn.Close();
-                
-            }
         }
     }
 }

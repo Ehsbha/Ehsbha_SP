@@ -117,7 +117,7 @@
             align-items: center;
         }
 
-            .div_meneu button {
+            .menueButton {
                 background-color: #CE9C2B;
                 color: white;
                 text-align: center;
@@ -135,7 +135,7 @@
             }
 
 
-                .div_meneu button:hover {
+                .menueButton:hover {
                     background-color: rgba(2, 67, 53, 0.90);
                     color: white;
                     border: 3px solid #CE9C2B;
@@ -209,45 +209,45 @@
         /*form ==================================================*/
 
         .invoic-box {
-            width: 1200px;
+            width: 70%;
             height: auto;
             position: center;
-            margin: 10px auto;
+            
             background: #fff;
+            margin:0;
             padding: 10px 0 30px 0;
             box-shadow: 0 0 15px 5px gray;
             border-radius: 18px;
             overflow: hidden;
+            display:inline;
+            text-align:center;
+            align-items:center;
         }
 
         .input-group {
             position: center;
             overflow: hidden;
-            width: 900px;
+            margin: 0;
             transition: .5s;
-            margin-top: 40px;
+            // margin-top: 40px;
             text-align: center;
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
             height: auto;
-            width: 49%;
+            width: 46%;
         }
-
-        #forms {
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }
-
-
 
         #sale {
+            padding-left: 8em;
             display: inline-block;
             float: left;
+            margin-left: auto;
+            //position:center;
         }
 
         #purchase {
             display: inline-block;
             float: right;
+            margin-right: auto;
         }
 
         #div1 {
@@ -327,289 +327,166 @@
             border-radius: 5px;
             padding: 3px;
         }
+        .auto-style1 {
+            text-align: center;
+        }
+        .auto-style2 {
+            text-align: right;
+        }
     </style>
 
 
 
 </head>
-<body style="background-color: rgba(215,233, 216,0.5);flex-grow : 0;">
+<body style="background-color: rgba(215,233, 216,0.5); flex-grow: 0; position: relative;">
 
 
 
 
     <div class="icon-bar">
 
-        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
-        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
+        <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
     </div>
-    <div style="background-color: rgba(2, 67, 53, 0.90);color:white;font-family:'Times New Roman';font-size:15px;padding:5px;direction:rtl">
+    <form runat="server">
+        <div style="                background-color: rgba(2, 67, 53, 0.90); direction:rtl;
+                color: white;
+                font-family: 'Times New Roman';
+                font-size: 15px;
+                padding: 5px;" class="auto-style2" >
 
-        <p style="display:inline-block;">حنان عماد باعثمان</p>
-        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<p style="display:inline-block">الوقت المتبقي لتسليم نموذج الإقرار الضريبي :</p>:&nbsp;
-        <p id="timer" style="display:inline-block;color:#e1c37f"></p>
-        <button type="button" class="logout" style=" left: 155px;">إعدادات</button>
-        <button type="button" class="logout" style=" left: 70px;">English</button>
-        <button type="button" class="logout" style=" left: 10px;">خروج</button>
+            <asp:Label ID="fName" runat="server" Style="display: inline-block "  Text=" "></asp:Label>
+            
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;
+        <asp:Label ID="timer" Style="display: inline-block; color: #e1c37f" runat="server"></asp:Label>
+        
+            
+        <asp:Button runAt="server" type="button" class="logout" style=" left: 155px;" text="إعدادات" OnClick="setting_Click"/>
+        <asp:Button runAt="server" type="button" class="logout" style=" left: 70px;" Text="English" OnClick="langueg_Click"/>
+        <asp:Button runAt="server" type="button" class="logout" style=" left: 10px;" Text="خروج" OnClick="logout_Click"/>
 
+        </div>
+        <div class="div_header_img">
+
+            <img src="pic/logo_back.png" alt="logo" style="width: 200px; height:100px; display:block; position:absolute; margin-top:25px; right:20px;" margin-right:"90px" class="logo_hover" />
     </div>
-    <div class="div_header_img">
-
-        <img src="pic/logo_back.png" alt="logo" style="width: 200px;height:100px; display:block;position:absolute;margin-top:25px;right:20px;" class="logo_hover" />
-    </div>
-
     <div class="div_meneu" id="Header">
 
-        <button class="button" style="border-radius: 30px 0px 30px 0px;">الرئيسية</button>
-        <button class="button " style="border-radius: 30px 0px 30px 0px;">إضافة فواتير</button>
-        <button class="button " style="border-radius: 13px;">نموذج الإقرار الضريبي </button>
-        <button class="button " style="border-radius: 0px 30px 0px 30px;">بيانات</button>
-        <button class="button " style="border-radius: 0px 30px 0px 30px;">تواصل معنا</button>
-    </div>
-
-
-    <div class="invoic-box" dir="rtl" lang="ar">
-        <div id="sale" class="input-group">
-            <p style="font-family:'Times New Roman';font-size:30px; color:#02614D">فواتير المبيعات</p>
-            &nbsp;
-            <div id="div1">
-                <table id="table1">
-
-                    <tr>
-                        <th>#</th>
-                        <th>القيمة</th>
-                        <th>التاريخ </th>
-                        <th>تعديل</th>
-                    </tr>
-
-                </table>
-            </div>
-
-            <div id="div2">
-                <table id="table2">
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2000</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                </table>
-            </div>
+    <asp:Button ID="homePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="الرئيسية" OnClick="homePage_Click" />
+            <asp:Button ID="addInvoicePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="إضافة فواتير" OnClick="addInvoicePage_Click" />
+            <asp:Button ID="formPage" class="menueButton" runat="server" Style="border-radius: 13px;" Text="نموذج الإقرار الضريبي" OnClick="formPage_Click" />
+            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="الملخص" OnClick="summaryPage_Click" />
+            <asp:Button ID="contactPage" Class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="تواصل معنا" OnClick="contactPage_Click" />
+    
         </div>
 
 
-        <div id="purchase" class="input-group">
-            <p style="font-family:'Times New Roman';font-size:30px; color:#02614D">فواتير المشتريات</p>
-            &nbsp;
-            <div id="div1">
-                <table id="table1">
+        <div class="input-box" >
+           
+            <div id="sale" runat="server" visible="true" class="auto-style1">
+                <br />
+                <p style="font-family:'Times New Roman';font-size:30px; color:#02614D; align-content:center" class="auto-style1">فواتير المبيعات</p><br />
+                <asp:SqlDataSource ID="salesDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:RegesterationConnectionString %>" DeleteCommand="DELETE FROM [sale] WHERE [saleId] = @saleId" InsertCommand="INSERT INTO [sale] ([date], [price], [classification], [adjasment]) VALUES (@date, @price, @classification, @adjasment)" SelectCommand="SELECT [saleId], [date], [price], [classification], [adjasment] FROM [sale] WHERE ([userId] = @userId)" UpdateCommand="UPDATE [sale] SET [date] = @date, [price] = @price, [classification] = @classification, [adjasment] = @adjasment WHERE [saleId] = @saleId">
+                    <DeleteParameters>
+                        <asp:Parameter Name="saleId" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter DbType="Date" Name="date" />
+                        <asp:Parameter Name="price" Type="Double" />
+                        <asp:Parameter Name="classification" Type="String" />
+                        <asp:Parameter Name="adjasment" Type="String" />
+                    </InsertParameters>
+                    <SelectParameters>
+                        <asp:SessionParameter Name="userId" SessionField="User" Type="Int32" />
+                    </SelectParameters>
+                    <UpdateParameters>
+                        <asp:Parameter DbType="Date" Name="date" />
+                        <asp:Parameter Name="price" Type="Double" />
+                        <asp:Parameter Name="classification" Type="String" />
+                        <asp:Parameter Name="adjasment" Type="String" />
+                        <asp:Parameter Name="saleId" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+                <asp:GridView ID="salesGridView" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="saleId" DataSourceID="salesDataSource" Width="574px" Height="545px" AllowPaging="True" rir="rtl">
+                    <Columns>
+                        <asp:BoundField DataField="saleId" HeaderText="#" InsertVisible="False" ReadOnly="True" SortExpression="saleId" />
+                        <asp:BoundField DataField="date" HeaderText="التاريخ" SortExpression="date" DataFormatString="{0:d}" />
+                        <asp:BoundField DataField="price" HeaderText="المبلغ (ريال)" SortExpression="price" />
+                        <asp:BoundField DataField="classification" HeaderText="التصنيف" SortExpression="classification" />
+                        <asp:BoundField DataField="adjasment" HeaderText="التعديل" SortExpression="adjasment" />
+                        <asp:CommandField DeleteText="X" ShowDeleteButton="True">
+                            <ItemStyle ForeColor="Red" />
+                        </asp:CommandField>
+                    </Columns>
 
-                    <tr>
-                        <th>#</th>
-                        <th>القيمة </th>
-                        <th>التاريخ </th>
-                        <th>تعديل </th>
-                    </tr>
+                    <FooterStyle BackColor="#1C5E55" />
+                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#E3EAEB" />
+                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
+                </asp:GridView>
 
-                </table>
             </div>
+            <div id="purchase" runat="server" class="input-group">
+                <br />
+                <p style="font-family:'Times New Roman';font-size:30px; color:#02614D">فواتير المشتريات</p><br />
+                <asp:SqlDataSource ID="purchaseDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:RegesterationConnectionString %>" DeleteCommand="DELETE FROM [purchase] WHERE [purchaseId] = @purchaseId" InsertCommand="INSERT INTO [purchase] ([date], [price], [classification], [adjasment]) VALUES (@date, @price, @classification, @adjasment)" SelectCommand="SELECT [purchaseId], [date], [price], [classification], [adjasment] FROM [purchase] WHERE ([userId] = @userId)" UpdateCommand="UPDATE [purchase] SET [date] = @date, [price] = @price, [classification] = @classification, [adjasment] = @adjasment WHERE [purchaseId] = @purchaseId">
+                    <DeleteParameters>
+                        <asp:Parameter Name="purchaseId" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter DbType="Date" Name="date" />
+                        <asp:Parameter Name="price" Type="Double" />
+                        <asp:Parameter Name="classification" Type="String" />
+                        <asp:Parameter Name="adjasment" Type="String" />
+                    </InsertParameters>
+                    <SelectParameters>
+                        <asp:SessionParameter Name="userId" SessionField="User" Type="Int32" />
+                    </SelectParameters>
+                    <UpdateParameters>
+                        <asp:Parameter DbType="Date" Name="date" />
+                        <asp:Parameter Name="price" Type="Double" />
+                        <asp:Parameter Name="classification" Type="String" />
+                        <asp:Parameter Name="adjasment" Type="String" />
+                        <asp:Parameter Name="purchaseId" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
 
-            <div id="div2">
-                <table id="table2">
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2000</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>200</td>
-                        <td>19/3/2020</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                </table>
+                <asp:GridView ID="purchaseGridView" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="purchaseDataSource" AutoGenerateColumns="False" DataKeyNames="purchaseId" Width="574px" Height="545px" AllowPaging="True">
+                    <Columns>
+                        <asp:BoundField DataField="purchaseId" HeaderText="#" InsertVisible="False" ReadOnly="True" SortExpression="purchaseId" />
+                        <asp:BoundField DataField="date" DataFormatString="{0:d}" HeaderText="التاريخ" SortExpression="date" />
+                        <asp:BoundField DataField="price" HeaderText="Value (SAR)" SortExpression="المبلغ (ريال) " />
+                        <asp:BoundField DataField="classification" HeaderText="Classification" SortExpression="التصنيف" />
+                        <asp:BoundField DataField="adjasment" HeaderText="Adjasment" SortExpression="التعديل" />
+                        <asp:CommandField DeleteText="X" ShowDeleteButton="True">
+                            <ItemStyle ForeColor="Red" />
+                        </asp:CommandField>
+                    </Columns>
+                    <FooterStyle BackColor= "#1C5E55"/>
+                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#E3EAEB" />
+                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
+                </asp:GridView>
+
+
             </div>
-        </div>
-
-        <div id="forms" class="input-group">
-            &nbsp;
-            <p style="font-family:'Times New Roman';font-size:30px; color:#02614D">نماذج إرجاع ضريبة القيمة المضافة</p>
-            &nbsp;
-            <div id="div1">
-                <table id="table1">
-
-                    <tr>
-                        <th>#</th>
-                        <th>التاريخ </th>
-                        <th>ملف PDF</th>
-                        <th>تعديل </th>
-                    </tr>
-
-                </table>
             </div>
-
-            <div id="div2">
-                <table id="table2">
-                    <tr>
-                        <td>1</td>
-                        <td>19/3/2020</td>
-                        <td>pdf</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>19/3/2020</td>
-                        <td>pdf</td>
-                        <td><button>حذف</button></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-
-        </div>
-    </div>
-
-
-
-    <script>/*================================================================================*/
-
-
-        // Set the date we're counting down to
-        var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-
-        // Update the count down every 1 second
-        var x = setInterval(function () {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-
-            // Output the result in an element with id="demo"
-            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-                + minutes + "m ";
-
-            // If the count down is over, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerHTML = "EXPIRED";
-            }
-        }, 1000);</script>
-
-
-
+    </form>
 </body>
 </html>
 

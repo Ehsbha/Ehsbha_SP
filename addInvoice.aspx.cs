@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Ehsbha_SP
@@ -23,6 +17,9 @@ namespace Ehsbha_SP
                     SqlCommand com = new SqlCommand(name, conn);
                     fName.Text = "Facility Name: " + Convert.ToString(com.ExecuteScalar());
                     conn.Close();
+                    TimeSpan t = home.lastDate - DateTime.Now;
+                    String countDown = "The remining time for VAT return form: " + string.Format("{0} Days, {1} Hours ", (t.Days + 1), (t.Hours + 1));
+                    timer.Text = countDown;
                 }
                 catch (Exception ex)
                 {
@@ -117,14 +114,12 @@ namespace Ehsbha_SP
                 SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ehsbhaWebApp\Ehsbha_SP\Ehsbha_SP\App_Data\ehsbhaDB.mdf;Integrated Security=True");
                 conn.Open();
                 string insert = "insert into purchase values(@userId,@date,@price,@classification,@adjasment)";
-
                 SqlCommand com = new SqlCommand(insert, conn);
-                com.Parameters.AddWithValue("@userId", Session["User"]);
+                com.Parameters.AddWithValue("@userId", Session["User"].ToString());
                 com.Parameters.AddWithValue("@date", purchaseDate.Text);
-                float num = float.Parse(purchaseValue.Text);
-                string stringValue = num.ToString().Replace(',', '.');
-                com.Parameters.AddWithValue("@price", stringValue);
+                com.Parameters.AddWithValue("@price", purchaseValue.Text);
                 com.Parameters.AddWithValue("@classification", purchaseClassification.SelectedValue);
+
                 if (PurchaseAdjasment.Checked)
                 {
                     com.Parameters.AddWithValue("@adjasment", "yes");

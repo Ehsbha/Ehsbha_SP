@@ -169,15 +169,16 @@
 
 
         .div_form {
-            background-image: url('pic/form_a.jpg');
-            background-size: contain;
+            background-image: url('pic/form_a.jpeg');
+            background-size:cover;
             background-repeat: no-repeat;
-            height: 605px;
-            width: 78%;
+            height: 602px;
+            width: 75%;
             margin-left: auto;
             margin-right: auto;
             border-radius: 20px;
             box-shadow: 0px 0px 20px 5px #bfbfbf;
+            padding-right:1.5em;
         }
 
         .submit-btn {
@@ -210,13 +211,13 @@
             font-size: 17px;
             border:hidden;
             background:none;
-            padding-left: 2.3em;
+            padding-left: 1.7em;
         }
 
         .box {
             height: 15px;
         }
-    </style>
+        </style>
 
 
 
@@ -228,14 +229,16 @@
 
     <div class="icon-bar">
 
-        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
-        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
+        <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
     </div>
     <div style="background-color: rgba(2, 67, 53, 0.90);color:white;font-family:'Times New Roman';font-size:15px;padding:5px;direction:rtl">
 
-        <asp:Label id="fName" runAt="server" style="display: inline-block">Hanan emad baothman</asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<p style="display:inline-block">الوقت المتبقي لتسليم نموذج الإقرار الضريبي :</p>:&nbsp;
+        <asp:Label id="fName" runAt="server" style="display: inline-block"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label id="timer" style="display: inline-block; color: #e1c37f" runAt="server"></asp:Label>
 
         <asp:Button runAt="server" type="button" class="logout" style=" left: 155px;" text="إعدادات" OnClick="setting_Click"/>
         <asp:Button runAt="server" type="button" class="logout" style=" left: 70px;" Text="English" OnClick="langueg_Click"/>
@@ -252,69 +255,70 @@
         <asp:Button ID="homePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="الرئيسية" OnClick="homePage_Click" />
             <asp:Button ID="addInvoicePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="إضافة فواتير" OnClick="addInvoicePage_Click" />
             <asp:Button ID="formPage" class="menueButton" runat="server" Style="border-radius: 13px;" Text="نموذج الإقرار الضريبي " OnClick="formPage_Click" />
-            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="بيانات" OnClick="summaryPage_Click" />
+            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="الملخص" OnClick="summaryPage_Click" />
             <asp:Button ID="contactPage" Class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="تواصل معنا" OnClick="contactPage_Click" />
 
     </div>
     <div class="body_section">
 
         <div class="div_form">
-            <div style="float:left;margin-left:8.6%;width:8.8%;height:58.8%;margin-top:11.3%;display:block">
+            <div style="float:left;margin-left:3.4%;width:8.8%;height:58.8%;display:block">
 
-                <div class="box"><asp:TextBox id="s5" runat="server" class="text_box"></asp:TextBox></div>
-                <div class="box" style="margin-top:88px"> <asp:TextBox runat="server" class="text_box" ID="totalSale"></asp:TextBox></div>
-                <div class="box" style="margin-top:36px"><asp:TextBox runat="server" class="text_box" ID="p5"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="pImports"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="pRCM"></asp:TextBox></div>
-                <div class="box" style="margin-top:47px"><asp:TextBox runat="server" class="text_box" ID="totalPurchases"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="totalVAT"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="correction"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="carried"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="net"></asp:TextBox></div>
+                <div class="box" style="margin-top:106px"> <asp:TextBox id="s5" runat="server" class="text_box"></asp:TextBox></div>
+                <div class="box" style="margin-top:105px"> <asp:TextBox runat="server" class="text_box" ID="totalSale"></asp:TextBox></div>
+                <div class="box" style="margin-top:42px"><asp:TextBox runat="server" class="text_box" ID="p5"></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="pImports"></asp:TextBox></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="pRCM"></asp:TextBox></div>
+                <div class="box" style="margin-top:55px"><asp:TextBox runat="server" class="text_box" ID="totalPurchases"></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="totalVAT"></asp:TextBox></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="correction"></asp:TextBox></div>
+                <div class="box" style="margin-top:11px"><asp:TextBox runat="server" class="text_box" ID="carried"></asp:TextBox></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="net"></asp:TextBox></div>
 
 
             </div>
 
 
-            <div style="float:left;margin-left:3.4%;width:8.8%;height:45.8%;margin-top:11.3%;display:block">
+            <div style="float:left;margin-left:6.7%;width:8.8%;height:45.8%;display:block">
 
 
-                <div class="box"><asp:TextBox ID="sAdj5" runat="server" class="text_box"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAdjCitizens"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sAdj0"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAdjExports"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAdjExempt"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sTotalAdj"></asp:TextBox></div>
-                <div class="box" style="margin-top:36px"><asp:TextBox runat="server" class="text_box" ID="pAdj5"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="pAdjImports"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="pAdjRCM"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="pAdj0"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="pAdjExempt"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="pTotalAdj"></asp:TextBox></div>
+                <div class="box" style="margin-top:105px"><asp:TextBox ID="sAdj5" runat="server" class="text_box"></asp:TextBox></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="sAdjCitizens"></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="sAdj0"></asp:TextBox></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="sAdjExports"></asp:TextBox></div>
+                <div class="box" style="margin-top:10.8px"><asp:TextBox runat="server" class="text_box" ID="sAdjExempt"></asp:TextBox></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="sTotalAdj"></asp:TextBox></div>
+                <div class="box" style="margin-top:44px"><asp:TextBox runat="server" class="text_box" ID="pAdj5"></asp:TextBox></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="pAdjImports"></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="pAdjRCM"></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="pAdj0"></asp:TextBox></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="pAdjExempt"></asp:TextBox></div>
+                <div class="box" style="margin-top:7px"><asp:TextBox runat="server" class="text_box" ID="pTotalAdj"></asp:TextBox></div>
 
             </div>
            
             
-            <div style="float:left;margin-left:2.2%;width:8.8%;height:45.8%;margin-top:11.3%;display:block">
+            <div style="float:left;margin-left:4.2%;width:8.8%;height:45.8%;display:block">
 
 
-                <div class="box"><asp:TextBox id="sAmount5" runat="server" class="text_box"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAmountCitizens"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sAmount0"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAmountExport"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAmountExempt"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sTotalAmount"></asp:TextBox></div>
-                <div class="box" style="margin-top:36px"><asp:TextBox runat="server" class="text_box" ID="pAmount5"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="pAmountImports"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="pAmountRCM"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="pAmount0"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="pAmountExempt"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="pTotalAmount"></asp:TextBox></div>
+                <div class="box" style="margin-top:105px"><asp:TextBox id="sAmount5" runat="server" class="text_box"></asp:TextBox></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="sAmountCitizens"></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="sAmount0"></asp:TextBox></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="sAmountExport"></asp:TextBox></div>
+                <div class="box" style="margin-top:10.8px"><asp:TextBox runat="server" class="text_box" ID="sAmountExempt"></asp:TextBox></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="sTotalAmount"></asp:TextBox></div>
+                <div class="box" style="margin-top:44px"><asp:TextBox runat="server" class="text_box" ID="pAmount5"></asp:TextBox></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="pAmountImports"></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="pAmountRCM"></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="pAmount0"></asp:TextBox></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="pAmountExempt"></asp:TextBox></div>
+                <div class="box" style="margin-top:7px"><asp:TextBox runat="server" class="text_box" ID="pTotalAmount"></asp:TextBox></div>
 
 
             </div>
         </div>
             <asp:Button id="preperVAT" runAt="server" type="button" class="submit-btn" Text="إعداد نموذج الإقرار الضريبي" OnClick="preperVAT_Click"/>
+        <asp:Button ID="Save" runat="server" CssClass="submit-btn" Text="حفظ" OnClick="Save_Click" />
    
     </div>
 

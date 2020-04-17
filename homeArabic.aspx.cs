@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Ehsbha_SP
 {
     public partial class homeArabic : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["User"] != null)
@@ -22,7 +17,28 @@ namespace Ehsbha_SP
                     String name = "select facilityName from users where userId='" + Session["User"].ToString() + "'";
                     SqlCommand com = new SqlCommand(name, conn);
                     fName.Text = "اسم المنشأة: " + Convert.ToString(com.ExecuteScalar());
+                    String date = "select taxPeriod from users where userId='" + Session["User"].ToString() + "'";
+                    com = new SqlCommand(date, conn);
+                    string period = Convert.ToString(com.ExecuteScalar());
+
                     conn.Close();
+
+                    if (home.firstDate == null || DateTime.Now.Date > (home.lastDate))
+                    {
+                        home.firstDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                        if (object.Equals(period, "Monthly"))
+                        {
+                            home.lastDate = home.firstDate.AddMonths(1).AddDays(-1);
+                        }
+                        else
+                        {
+                            home.lastDate = home.firstDate.AddMonths(3).AddDays(-1);
+                        }
+                    }
+
+                    TimeSpan t = home.lastDate - DateTime.Now;
+                    string countDown = " الوقت المتبقي لحساب الاقرار الضريبي :"+string.Format("{0} ايام , {1} ساعات ", (t.Days + 1), (t.Hours + 1));
+                    timer.Text = countDown;
                 }
                 catch (Exception ex)
                 {

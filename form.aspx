@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="form.aspx.cs" Inherits="Ehsbha_SP.form" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="form.aspx.cs" Inherits="Ehsbha_SP.form" EnableEventValidation="false" UnobtrusiveValidationMode="None"%>
 
 <!DOCTYPE html>
 <html>
@@ -169,11 +169,11 @@
 
 
         .div_form {
-            background-image: url('pic/form_e.png');
-            background-size: contain;
+            background-image: url('pic/form_e.jpeg');
+            background-size: cover;
             background-repeat: no-repeat;
-            height: 605px;
-            width: 78%;
+            height: 602px;
+            width: 75%;
             margin-left: auto;
             margin-right: auto;
             border-radius: 20px;
@@ -223,19 +223,15 @@
         }
         .auto-style2 {
             float: right;
-            width: 8%;
-            margin-top: 14%;
+            width: 7%;
+            margin-top: 12.5%;
         }
 
         .auto-style4 {
             height: 15px;
             width: 64px;
         }
-        .auto-style5 {
-            height: 15px;
-            margin-left: 48px;
-        }
-
+        
     </style>
 
 
@@ -245,20 +241,24 @@
         flex-grow: 0;">
 
     <form runat="server">
+        <asp:panel ID="panel1" runat="server">
 
     <div class="icon-bar">
 
-        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope"></i></a>
-        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
+        <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
     </div>
-    <div style="background-color: rgba(2, 67, 53, 0.90); color: white; font-family: 'Times New Roman'; font-size: 15px; text-align: left; padding: 5px;">
+    <div style="background-color: rgba(2, 67, 53, 0.90); color: white; font-family: 'Times New Roman'; font-size: 15px; padding: 5px;">
 
-        <asp:Label id="fName" runAt="server" style="display: inline-block">Hanan emad baothman</asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<p style="display: inline-block">Time remaining to deliver VAT form</p>
-        :&nbsp;
-        <p id="timer" style="display: inline-block; color: #e1c37f"></p>
-
+        <asp:Label id="fName" runAt="server" style="display: inline-block"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;
+        
+        <asp:Label id="timer" style="display: inline-block; color: #e1c37f" runAt="server"></asp:Label>
 
         <asp:Button ID="setting" class="logout" Style="right: 135px;" runat="server" Text="settings" OnClick="setting_Click" />
         <asp:Button ID="langueg" class="logout" Style="right: 80px;" runat="server" Text="عربي" OnClick="langueg_Click" />
@@ -279,63 +279,68 @@
         <asp:Button ID="contactPage" Class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="Contact us" OnClick="contactPage_Click" />
 
     </div>
-    <div class="body_section">
 
+    <div class="body_section" id="myDiv" runat="server">
+        
         <div class="div_form" runat="server">
-            <div style="margin-right:19.5%;display:block" class="auto-style2">
+            <div style="margin-right:16%;display:block" class="auto-style2" >
 
-                <div class="box"><asp:TextBox runat="server" class="text_box" ID="s5" Text=" " CssClass="text_box" Width="78px"/></div>
-                <div class="box" style="margin-top:87px"> <asp:TextBox runat="server" class="text_box" ID="totalSale" Text=" "/></div>
-                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="p5" Text=" "/></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pImports"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pRCM"/></div>
-                <div class="box" style="margin-top:58px"><asp:TextBox runat="server" class="text_box" Text=" " ID="totalPurchases"/></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" Text=" " ID="totalVAT"/></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" Text=" " ID="correction"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" Text=" " ID="carried"/><asp:TextBox runat="server" class="text_box" Text=" " ID="net"/></div>
-
-            </div>
-
-
-            <div style="float:right;margin-right:4.3%;width:8%;height:42.5%;margin-top:14%;display:block">
-
-
-                <div class="box"><asp:TextBox runat="server" class="text_box" ID="sAdj5" Text=" " Width="80px"/></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAdjCitizens" Text=" " Width="61px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sAdj0" Text=" " Width="73px"/></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAdjExports" Text=" " Width="61px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sAdjExempt" Text=" " Width="65px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sTotalAdj" Text=" " Width="62px"/></div>
-                <div class="box" style="margin-top:7px"><asp:TextBox runat="server" class="text_box" ID="pAdj5" Text=" " Width="60px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="pAdjImports" Text=" " Width="58px"/></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAdjRCM" Width="63px"/></div>
-                <div class="box" style="margin-top:16px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAdj0" Width="55px"/></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAdjExempt" Width="67px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pTotalAdj" Width="56px"/></div>
-
+                <div class="box"><asp:TextBox runat="server" class="text_box" ID="s5" Text=" " CssClass="text_box" /></div>
+                <div class="box" style="margin-top:106px"> <asp:TextBox runat="server" class="text_box" ID="totalSale" Text=" "/></div>
+                <div class="box" style="margin-top:14px"><asp:TextBox runat="server" class="text_box" ID="p5" Text=" "/></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pImports"/></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pRCM"/></div>
+                <div class="box" style="margin-top:75px"><asp:TextBox runat="server" class="text_box" Text=" " ID="totalPurchases"/></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" Text=" " ID="totalVAT"/></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" Text=" " ID="correction"/></div>
+                <div class="box" style="margin-top:11px"><asp:TextBox runat="server" class="text_box" Text=" " ID="carried"/><asp:TextBox runat="server" class="text_box" Text=" " ID="net"/></div>
 
             </div>
 
-            <div style="float:right;margin-right:3.2%;width:8%;height:42.5%;margin-top:14%;display:block">
 
-                <div class="box"><asp:TextBox runat="server" class="text_box" ID="sAmount5" Text=" " Width="68px"> </asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAmountCitizens" Text=" " Width="86px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sAmount0" Text=" " Width="68px"/></div>
-                <div class="auto-style1" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" ID="sAmountExport" Text=" " Width="70px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sAmountExempt" Text=" " Width="68px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="sTotalAmount" Text=" " Width="68px"/></div>
-                <div class="box" style="margin-top:7px"><asp:TextBox runat="server" class="text_box" ID="pAmount5" Text=" " Width="66px"/></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" ID="pAmountImports" Text=" " Width="65px"/></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAmountRCM" Width="63px"></asp:TextBox></div>
-                <div class="box" style="margin-top:16px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAmount0" Width="65px"></asp:TextBox></div>
-                <div class="box" style="margin-top:6px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAmountExempt" Width="63px"></asp:TextBox></div>
-                <div class="box" style="margin-top:5px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pTotalAmount" Width="66px"></asp:TextBox></div>
-                <div class="auto-style4" style="margin-top:6px"></div>
+            <div style="float:right;margin-right:5.3%;width:8%;height:42.5%;display:block" >
+
+
+                <div class="box" style="margin-top:115px"><asp:TextBox runat="server" class="text_box" ID="sAdj5" Text=" " /></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="sAdjCitizens" Text=" " /></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="sAdj0" Text=" " /></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="sAdjExports" Text=" " /></div>
+                <div class="box" style="margin-top:10.8px"><asp:TextBox runat="server" class="text_box" ID="sAdjExempt" Text=" " /></div>
+                <div class="box" style="margin-top:7px"><asp:TextBox runat="server" class="text_box" ID="sTotalAdj" Text=" "/></div>
+                <div class="box" style="margin-top:14px"><asp:TextBox runat="server" class="text_box" ID="pAdj5" Text=" " /></div>
+                <div class="box" style="margin-top:7px"><asp:TextBox runat="server" class="text_box" ID="pAdjImports" Text=" " /></div>
+                <div class="box" style="margin-top:11px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAdjRCM" /></div>
+                <div class="box" style="margin-top:24px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAdj0" /></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAdjExempt"/></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pTotalAdj" /></div>
+
+
+            </div>
+
+            <div style="float:right;margin-right:5.2%;width:8%;height:42.5%;display:block" >
+
+                <div class="box" style="margin-top:115px" ><asp:TextBox runat="server" class="text_box" ID="sAmount5" Text=" " > </asp:TextBox></div>
+                <div class="box" style="margin-top:9px"><asp:TextBox runat="server" class="text_box" ID="sAmountCitizens" Text=" "/></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" ID="sAmount0" Text=" "/></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" ID="sAmountExport" Text=" " /></div>
+                <div class="box" style="margin-top:10.8px"><asp:TextBox runat="server" class="text_box" ID="sAmountExempt" Text=" " /></div>
+                <div class="box" style="margin-top:7px"><asp:TextBox runat="server" class="text_box" ID="sTotalAmount" Text=" " /></div>
+                <div class="box" style="margin-top:14px"><asp:TextBox runat="server" class="text_box" ID="pAmount5" Text=" " /></div>
+                <div class="box" style="margin-top:7px"><asp:TextBox runat="server" class="text_box" ID="pAmountImports" Text=" " /></div>
+                <div class="box" style="margin-top:11px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAmountRCM" ></asp:TextBox></div>
+                <div class="box" style="margin-top:24px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAmount0" ></asp:TextBox></div>
+                <div class="box" style="margin-top:10px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pAmountExempt" ></asp:TextBox></div>
+                <div class="box" style="margin-top:8px"><asp:TextBox runat="server" class="text_box" Text=" " ID="pTotalAmount" ></asp:TextBox></div>
+                
 
             </div>
         </div>
         <asp:Button id="preperVAT" runAt="server" type="button" class="submit-btn" Text="Prepare VAT return form" OnClick="preperVAT_Click"/>
-    </div>
+        <asp:Button ID="Save" runat="server" CssClass="submit-btn" Text="Save" OnClick="Save_Click" />
+   
+        </div>
+        
+       </asp:panel>
     </form>
 
 </body>

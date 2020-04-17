@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Configuration;
 using System.Data.SqlClient;
 using Microsoft.VisualBasic;
-using System.Windows.Forms.VisualStyles;
-using System.Web.UI.HtmlControls;
-using System.Windows.Forms.Layout;
-using System.Windows.Forms.DataVisualization;
-
 
 namespace Ehsbha_SP
 {
@@ -29,10 +19,14 @@ namespace Ehsbha_SP
                     SqlCommand com = new SqlCommand(name, conn);
                     string names = Convert.ToString(com.ExecuteScalar());
                     fName.Text = "Facility Name: " +names;
-                    
-                    
+
+                    TimeSpan t = home.lastDate - DateTime.Now;
+                    home.countDown = "The remining time for VAT return form: " + string.Format("{0} Days, {1} Hours ", (t.Days + 1), (t.Hours + 1));
+                    timer.Text = home.countDown;
 
                     conn.Close();
+                    
+                    
                 }
                 catch (Exception ex)
                 {
@@ -88,28 +82,22 @@ namespace Ehsbha_SP
             Response.Redirect("contact.aspx");
         }
 
-        protected void updating(object sender, EventArgs e)
-        {
-
-            SqlDataSource2.Update();
-            
-        }
-
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
-            //NewEditIndex property used to determine the index of the row being edited.  
            GridView1.EditIndex = e.NewEditIndex;
         }
         protected void GridView1_RowUpdating(object sender, EventArgs e)
         {
-         
-            //Finding the controls from Gridview for the row which is going to update  
+            Label tax= GridView1.Rows[0].FindControl("taxPeriodL") as Label;
             TextBox facilityName = GridView1.Rows[0].FindControl("facilityName") as TextBox;
             TextBox email = GridView1.Rows[0].FindControl("email") as TextBox;
             TextBox phone = GridView1.Rows[0].FindControl("phone") as TextBox;
             RadioButtonList taxPeriod = GridView1.Rows[0].FindControl("taxPeriod") as RadioButtonList;
 
-            //updating the record  
+            if (taxPeriod.SelectedValue == null)
+            {
+                taxPeriod.Text = tax.Text;
+            }
             SqlDataSource2.UpdateCommand=("Update users set facilityName='" + facilityName.Text  + "', email='"+ email.Text+ "', phone='"+ phone.Text + "', taxPeriod='"+taxPeriod.SelectedValue+"' where userId=" + Session["User"]);
             
             //Setting the EditIndex property to -1 to cancel the Edit mode in Gridview  
@@ -128,7 +116,7 @@ namespace Ehsbha_SP
             
             if (correctionsQ == MsgBoxResult.Yes )
             {
-                SqlDataSource2.DeleteCommand="DELETE FROM [users] WHERE [userId] = @userId";
+                
                 SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ehsbhaWebApp\Ehsbha_SP\Ehsbha_SP\App_Data\ehsbhaDB.mdf;Integrated Security=True");
                 conn.Open();
                 String deleteS = "delete from sale where userId='" + Session["User"].ToString() + "'";
@@ -137,8 +125,11 @@ namespace Ehsbha_SP
                 String deleteP = "delete from purchase where userId='" + Session["User"].ToString() + "'";
                 com = new SqlCommand(deleteP, conn);
                 com.ExecuteNonQuery();
-
+                String deleteAccount= "DELETE FROM users WHERE userId ='" + Session["User"].ToString() + "'";
+                com = new SqlCommand(deleteAccount, conn);
+                com.ExecuteNonQuery();
                 conn.Close();
+
                 Session["User"] = null;
                 Response.Redirect("startPage.aspx");
 
@@ -149,5 +140,49 @@ namespace Ehsbha_SP
             }
            
         }
+
+        protected void ChangePassword_ChangedPassword(object sender, EventArgs e)
+        {
+            
+            myTable.Visible = true;
+            changeClick.Visible = false;
+            cancel.Visible = true;
+            
+
+        }
+        protected void change_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ehsbhaWebApp\Ehsbha_SP\Ehsbha_SP\App_Data\ehsbhaDB.mdf;Integrated Security=True");
+            conn.Open();
+            String check = "select password from users where userId=" + Session["User"].ToString();
+            SqlCommand cmd = new SqlCommand(check, conn);
+            cmd.ExecuteScalar();
+
+            if (cmd.ExecuteScalar().ToString() == CurrentPassword.Text)
+            {
+                string str = "update users set password='" + NewPassword.Text + "'where userId=" + Session["User"].ToString();
+                cmd = new SqlCommand(str, conn);
+                cmd.ExecuteNonQuery();
+                FailureText.Text = "Your Password has been changed successfully ";
+                myTable.Visible = false;
+                changeClick.Visible = false;
+                cancel.Visible = false;
+                conn.Close();
+            }
+            else
+            {
+                FailureText.Text = " Your old Password is incorrect try again... ";
+            }
+        }
+
+
+        protected void cancel_Click(object sender, EventArgs e)
+        {
+            myTable.Visible = false;
+            changeClick.Visible = false;
+            cancel.Visible = false;
+        }
+
     }
+    
 }

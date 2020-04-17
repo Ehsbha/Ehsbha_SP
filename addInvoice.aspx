@@ -302,6 +302,15 @@
         #purchase {
             left: 650px;
         }
+        .auto-style1 {
+            width: 314px;
+            margin: 40px auto 0px auto;
+            position: relative;
+            box-shadow: 0 0 15px 9px #FCF3CF;
+            border-radius: 30px;
+            left: 0px;
+            top: 0px;
+        }
     </style>
 
 
@@ -314,15 +323,21 @@
 
     <div class="icon-bar">
 
-        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope"></i></a>
-        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope"></i></a>
+        <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
     </div>
     <form runat="server">
         <div style="background-color: rgba(2, 67, 53, 0.90); color: white; font-family: 'Times New Roman'; font-size: 15px; text-align: left; padding: 5px;">
-
+          
             <asp:Label ID="fName" runat="server" Style="display: inline-block" Text=" "></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;
+        
+        <asp:Label id="timer" style="display: inline-block; color: #e1c37f" runAt="server"></asp:Label>
 
             <asp:Button ID="setting" class="logout" Style="right: 135px;" runat="server" Text="settings" OnClick="setting_Click" />
             <asp:Button ID="langueg" class="logout" Style="right: 80px;" runat="server" Text="عربي" OnClick="langueg_Click" />
@@ -345,15 +360,15 @@
         </div>
 
         <div class="form-box">
-            <div class="button-box">
+            <div class="auto-style1">
                 <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="sale()">Sale</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <button type="button" class="toggle-btn " onclick="purchase()">Purchase</button></div>
+                <button type="button" class="toggle-btn" onclick="sale()">Sales</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <button type="button" class="toggle-btn " onclick="purchase()">Purchases</button></div>
             
             <div id="sale" class="input-group" >
                 <asp:TextBox ID="saleValue" ValidationGroup="saleT" class="input-field" runat="server" placeholder="Value" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="saleT" runat="server" ControlToValidate="saleValue" ErrorMessage="You have to enter a value "></asp:RequiredFieldValidator>
-                <asp:TextBox ID="saleDate" ValidationGroup="saleT" type="date" class="input-field" runat="server" placeholder="MM/DD/YYYY" />
+                <asp:TextBox ID="saleDate" ValidationGroup="saleT" type="date" class="input-field" runat="server" placeholder=" " />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="saleT" runat="server" ControlToValidate="saleDate" ErrorMessage="You have to enter a date "></asp:RequiredFieldValidator>
 
                 &nbsp;

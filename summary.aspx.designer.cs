@@ -24,6 +24,15 @@ namespace Ehsbha_SP
         protected global::System.Web.UI.WebControls.Label fName;
 
         /// <summary>
+        /// timer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label timer;
+
+        /// <summary>
         /// setting control.
         /// </summary>
         /// <remarks>
@@ -96,21 +105,57 @@ namespace Ehsbha_SP
         protected global::System.Web.UI.WebControls.Button contactPage;
 
         /// <summary>
-        /// GridView1 control.
+        /// sale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sale;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// salesDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource salesDataSource;
+
+        /// <summary>
+        /// salesGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView salesGridView;
+
+        /// <summary>
+        /// purchase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl purchase;
+
+        /// <summary>
+        /// purchaseDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource purchaseDataSource;
+
+        /// <summary>
+        /// purchaseGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView purchaseGridView;
     }
 }

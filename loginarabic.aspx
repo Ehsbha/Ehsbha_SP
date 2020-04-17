@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginarabic.aspx.cs" Inherits="Ehsbha_SP.loginarabic" UnobtrusiveValidationMode="None"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginarabic.aspx.cs" Inherits="Ehsbha_SP.loginarabic" UnobtrusiveValidationMode="None" %>
 
 
 <!DOCTYPE html>
@@ -17,7 +17,6 @@
 
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -186,26 +185,30 @@
             left: 15px;
         }
 
-            .icon-bar a {
-                display: block;
-                text-align: center;
-                padding: 5px 8px 5px 8px;
-                transition: all 0.3s ease;
-                color: white;
-                font-family: 'Times New Roman';
-                border-radius: 20px;
-                color: #02614D;
-                box-shadow: 3px 5px 15px grey;
-                margin: 10px;
-                font-size: 40px;
-            }
+        .errors {
+            color: red;
+        }
 
-                .icon-bar a:hover {
-                    color: white;
-                    background-color: #CE9C2B;
-                    transition: all 0.3s ease;
-                    transform: scale(1.2);
-                }
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 5px 8px 5px 8px;
+            transition: all 0.3s ease;
+            color: white;
+            font-family: 'Times New Roman';
+            border-radius: 20px;
+            color: #02614D;
+            box-shadow: 3px 5px 15px grey;
+            margin: 10px;
+            font-size: 40px;
+        }
+
+            .icon-bar a:hover {
+                color: white;
+                background-color: #CE9C2B;
+                transition: all 0.3s ease;
+                transform: scale(1.2);
+            }
 
         .langueg {
             position: absolute;
@@ -226,6 +229,7 @@
                 transition: all 0.4s ease;
                 transform: scale(1.2);
             }
+
         .auto-style2 {
             width: 380px;
             height: 491px;
@@ -245,73 +249,81 @@
 <body>
     <div class="icon-bar">
 
-        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
-        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
+        <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
     </div>
     <img src="pic/logo_no.png" alt="logo" style="width: 330px; height: 179px; display: block; position: absolute; padding-top: 20px; padding-right: 60px; float: right; right: -2px; top: -24px;" class="logo_hover" />
-    
+
     <form action="login.aspx">
-    <button id="langueg" class="langueg" >English</button>
+        <button id="langueg" class="langueg">English</button>
     </form>
     <form runat="server">
-    <div class="auto-style2" id="myDiv">
-        <div class="button-box">
-            <div id="btn"></div>
-            <button type="button" class="toggle-btn " onclick="register()">تسجيل جديد</button>
-            <button type="button" class="toggle-btn" onclick="login()">دخول</button>
+        <div class="auto-style2" id="myDiv">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn " onclick="register()" id="reg" runat="server">تسجيل جديد</button>
+                <button type="button" class="toggle-btn" onclick="login()">دخول</button>
 
-        </div>
+            </div>
 
-        <div id="login" style="padding-right:1em;">
-            <asp:Label ID="invalid" runat="server" Text=" " ValidationGroup="login"></asp:Label>
+            <div id="login" style="padding-right: 1em;">
+                <asp:Label ID="invalid" runat="server" Text=" " ValidationGroup="login" CssClass="errors"></asp:Label>
                 <asp:TextBox ID="loginUser" runat="server" ValidationGroup="login" class="input-field" placeholder=" الرقم الضريبي"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="login" runat="server" ControlToValidate="loginUser" ErrorMessage="Tax Number Or Email Requiered"></asp:RequiredFieldValidator>
+                <br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="login" runat="server" ControlToValidate="loginUser" ErrorMessage="الرقم الضريبي مطلوب" CssClass="errors"></asp:RequiredFieldValidator>
                 <asp:TextBox ID="loginPass" runat="server" ValidationGroup="login" type="password" class="input-field" TextMode="Password" placeholder="كلمه السر"></asp:TextBox>
                 <br />
-                
-                <asp:CheckBox ValidationGroup="login" id="rememberMe" runat="server" class="chech-box" text="  تذكرني  "/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="login" runat="server" ControlToValidate="loginPass" ErrorMessage="Password is required"></asp:RequiredFieldValidator>    
-            <asp:HyperLink ID="HyperLink1" class="pass" ValidationGroup="login" runat="server">هل نسيت كلمة المرور؟</asp:HyperLink>
-                <asp:Button ValidationGroup="login" ID="login_btn" class="submit-btn" runat="server" Text="تسجيل الدخول" OnClick="login_Click" />
-        </div>
 
-        <div id="register" hidden="hidden" style="padding-right:1em;">
-            <asp:TextBox ValidationGroup="register" ID="facilityName" class="input-field" placeholder="اسم المنشأة" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator4" runat="server" ControlToValidate="facilityName" ErrorMessage="facility name is required"></asp:RequiredFieldValidator>
+                <asp:CheckBox ValidationGroup="login" ID="rememberMe" runat="server" class="chech-box" Text="  تذكرني  " />
+                <br />
+                <br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="login" runat="server" ControlToValidate="loginPass" ErrorMessage="كلمة المرور مطلوبة" CssClass="errors"></asp:RequiredFieldValidator>
+                <asp:HyperLink ID="HyperLink1" class="pass" ValidationGroup="login" runat="server">هل نسيت كلمة المرور؟</asp:HyperLink>
+                <asp:Button ValidationGroup="login" ID="login_btn" class="submit-btn" runat="server" Text="تسجيل الدخول" OnClick="login_Click" />
+            </div>
+
+            <div id="register" hidden="hidden" style="padding-right: 1em;">
+                <asp:TextBox ValidationGroup="register" ID="facilityName" class="input-field" placeholder="اسم المنشأة" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator4" runat="server" ControlToValidate="facilityName" ErrorMessage="اسم المنشأة مطلوب" CssClass="errors"></asp:RequiredFieldValidator>
 
                 <asp:TextBox ID="taxNum" ValidationGroup="register" class="input-field" runat="server" placeholder="الرقم الضريبي"></asp:TextBox>
-                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator3" runat="server" ControlToValidate="taxNum" ErrorMessage="Tax Number is required"></asp:RequiredFieldValidator>
-                <asp:Label ID="userE" ValidationGroup="register" runat="server" Text=" "></asp:Label>
+                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator3" runat="server" ControlToValidate="taxNum" ErrorMessage="الرقم الضريبي مطلوب" CssClass="errors"></asp:RequiredFieldValidator>
+                <br />
+                <asp:Label ID="userE" ValidationGroup="register" runat="server" Text=" " CssClass="errors"></asp:Label>
 
-                <asp:TextBox ValidationGroup="register" ID="phone" runat="server" class="input-field" placeholder="رقم الهاتف"></asp:TextBox>
-                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator6" runat="server" ControlToValidate="phone" ErrorMessage="phone number is required"></asp:RequiredFieldValidator>
-                <asp:Label ValidationGroup="register" ID="phoneE" runat="server" Text=" "></asp:Label>
+                <asp:TextBox ValidationGroup="register" ID="phone" runat="server" class="input-field" placeholder="رقم الجوال"></asp:TextBox>
+                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator6" runat="server" ControlToValidate="phone" ErrorMessage="رقم الجوال مطلوب" CssClass="errors"></asp:RequiredFieldValidator>
+                <br />
+                <asp:Label ValidationGroup="register" ID="phoneE" runat="server" Text=" " CssClass="errors"></asp:Label>
 
                 <asp:TextBox ValidationGroup="register" ID="email" runat="server" class="input-field" placeholder="البريد الإلكتروني"></asp:TextBox>
-                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator5" runat="server" ControlToValidate="email" ErrorMessage="email is required"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ValidationGroup="register" ID="RegularExpressionValidator1" runat="server" ControlToValidate="email" ErrorMessage="you must enter valid email id" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                <asp:Label ValidationGroup="register" ID="emailE" runat="server" Text=" "></asp:Label>
+                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator5" runat="server" ControlToValidate="email" ErrorMessage="الايميل مطلوب" CssClass="errors"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ValidationGroup="register" ID="RegularExpressionValidator1" runat="server" ControlToValidate="email" ErrorMessage="يجب ادخال الايميل بصيغة صحيحة" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="errors"></asp:RegularExpressionValidator>
+                <br />
+                <asp:Label ValidationGroup="register" ID="emailE" runat="server" Text=" " CssClass="errors"></asp:Label>
 
                 <asp:TextBox ValidationGroup="register" ID="pass" runat="server" TextMode="Password" class="input-field" placeholder="كلمةالمرور"></asp:TextBox>
-                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator7" runat="server" ControlToValidate="pass" ErrorMessage="password is required"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator7" runat="server" ControlToValidate="pass" ErrorMessage="كلمة المرور مطلوبة" CssClass="errors"></asp:RequiredFieldValidator>
 
                 <asp:TextBox ValidationGroup="register" ID="confirmPass" runat="server" TextMode="Password" class="input-field" placeholder="تأكيد كلمة المرور"></asp:TextBox>
-                &nbsp;<asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator8" runat="server" ControlToValidate="confirmPass" ErrorMessage="confirm password is required"></asp:RequiredFieldValidator>
-                <asp:CompareValidator ValidationGroup="register" ID="CompareValidator1" runat="server" ControlToCompare="pass" ControlToValidate="confirmPass" ErrorMessage="both password must be same"></asp:CompareValidator>
-            <br /><br />
-                <asp:Label ValidationGroup="register" class="radiobnt" runat="server" text="نوع الفترات الضريبية:" font-size="Medium"></asp:Label>
-                <asp:RadioButtonList ValidationGroup="register" ID="taxPeriod" runat="server" Width="250px" Class="radio"  RepeatDirection="Horizontal" CellPadding="2" CellSpacing="7">
-                    <asp:ListItem Value="Monthly" > تقرير شهري </asp:ListItem>
+                &nbsp;<asp:RequiredFieldValidator ValidationGroup="register" ID="RequiredFieldValidator8" runat="server" ControlToValidate="confirmPass" ErrorMessage="تأكيد كلمة المرور مطلوبة" CssClass="errors"></asp:RequiredFieldValidator>
+                <br />
+                <asp:CompareValidator ValidationGroup="register" ID="CompareValidator1" runat="server" ControlToCompare="pass" ControlToValidate="confirmPass" ErrorMessage="يجب ان تكون كلمة المرور وتاكيد كلمة المرور متطابقتان" CssClass="errors"></asp:CompareValidator>
+                <br />
+                <br />
+                <asp:Label ValidationGroup="register" class="radiobnt" runat="server" Text="نوع الفترات الضريبية:" Font-Size="Medium"></asp:Label>
+                <asp:RadioButtonList ValidationGroup="register" ID="taxPeriod" runat="server" Width="250px" Class="radio" RepeatDirection="Horizontal" CellPadding="2" CellSpacing="7">
+                    <asp:ListItem Value="Monthly"> تقرير شهري </asp:ListItem>
                     <asp:ListItem Value="Quarterly"> تقرير ربع سنوي </asp:ListItem>
                 </asp:RadioButtonList>
 
                 <asp:Button ValidationGroup="register" ID="register_btn" class="submit-btn" runat="server" Text="التسجيل" OnClick="register_Click" />
-        
-        </div>
+
+            </div>
         </div>
 
-</form>
+    </form>
 
     <script type="text/javascript">
         var x = document.getElementById("login");

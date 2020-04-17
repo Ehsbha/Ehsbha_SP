@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="startPage.aspx.cs" Inherits="Ehsbha_SP.startPage" UnobtrusiveValidationMode="None"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="startPage.aspx.cs" Inherits="Ehsbha_SP.startPage" UnobtrusiveValidationMode="None" %>
 
 <!DOCTYPE html>
 <html class="div1_main_img">
@@ -12,7 +12,6 @@
     <title>احسبها</title>
 
     <style>
-
         /*general ------------------------------------------- */
         h1 {
             text-align: center;
@@ -44,7 +43,6 @@
             height: auto;
             display: block;
             padding-bottom: 65px;
-           
         }
 
         .div_log_txt {
@@ -113,7 +111,7 @@
             color: #02614D;
             transition: all 0.4s ease;
             box-shadow: 3px 5px 15px #555555;
-            margin-top:50px;
+            margin-top: 50px;
             background: none;
         }
 
@@ -133,8 +131,8 @@
             box-shadow: 3px 5px 15px #555555;
             padding: 5px;
             background: none;
-            right:20px;
-            top:20px;
+            right: 20px;
+            top: 20px;
         }
 
             .langueg:hover {
@@ -148,40 +146,26 @@
 
 </head>
 <body>
-
-
-
- 
-
-        <form id="form1" runat="server">
-
+    <form id="form1" runat="server">
         <div class="icon-bar">
-
-            <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
-            <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-            <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+            <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope" hspace="20"></i></a>
+            <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+            <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
         </div>
-       
         <asp:Button ID="langueg" class="langueg" runat="server" Text="عربي" OnClick="langueg_Click" />
 
-        <img src="pic/logo_no.png" alt="logo" style="width: 400px ;height:200px;margin:0px auto 40px auto;display:block;text-align:center;padding-top:30px" class="logo_hover" />&nbsp;<div class="div_log_txt">
-            <h1>
-                -  Prepare your VAT return form with ease and clarity -
+        <img src="pic/logo_no.png" alt="logo" style="width: 400px; height: 200px; margin: 0px auto 40px auto; display: block; text-align: center; padding-top: 30px" class="logo_hover" />&nbsp;<div class="div_log_txt">
+            <h1>-  Prepare your VAT return form with ease and clarity -
             </h1>
-            <p style="font-size:20px;">
+            <p style="font-size: 20px;">
                 Ehsbha to facilitate the calculation of VAT return for facility owners in small and medium enterprises (SMEs), with provide an easy, clear, multilingual and graphical user interface.
             </p>
         </div>
         <div class="div_log_btn">
 
-            <asp:Button ID="sign_button" runat="server" Text="Login" class="sign-button" OnClick="sign_button_Click"/>
-
+            <asp:Button ID="sign_button" runat="server" Text="Login" class="sign-button" OnClick="sign_button_Click" />
         </div>
-
-
-        </form>
-
-
+    </form>
 </body>
 </html>
 

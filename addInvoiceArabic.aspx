@@ -173,9 +173,9 @@
             width: 580px;
             height: 680px;
             position: relative;
-            margin: 30px auto;
+            margin: auto;
             background: #fff;
-            padding: 5px;
+            padding: 2px;
             box-shadow: 0 0 15px 5px gray;
             border-radius: 18px;
             overflow: hidden;
@@ -315,16 +315,21 @@
 
     <div class="icon-bar">
 
-        <a href="mailto: Ehsbha@gmail.com "><i class="fa fa-envelope"></i></a>
-        <a href="https://twitter.com #"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="mailto: Ehsbha.2020@gmail.com "><i class="fa fa-envelope"></i></a>
+        <a href="https://twitter.com/Ehsbha1"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/ehabha_?igshid=2psslfjek1tm"><i class="fa fa-instagram"></i></a>
     </div>
     <form runat="server">
         <div style="background-color: rgba(2, 67, 53, 0.90); color: white; font-family: 'Times New Roman'; font-size: 15px; padding: 5px; direction: rtl">
 
             <asp:Label ID="fName" runat="server" Style="display: inline-block" Text=" "></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-            :&nbsp;
+            <asp:Label ID="Label1" runat="server" Style="display: inline-block" Text=" " />
+           &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;
+        <asp:Label id="timer" style="display: inline-block; color: #e1c37f" runAt="server"></asp:Label>
+
         <asp:Button ID="setting" runat="server" type="button" class="logout" Style="left: 155px;" Text="إعدادات" OnClick="setting_Click"></asp:Button>
             <asp:Button ID="langueg" runat="server" type="button" class="logout" Style="left: 70px;" Text="English" OnClick="langueg_Click"></asp:Button>
             <asp:Button ID="logoutb" runat="server" type="button" class="logout" style="left: 10px;" Text="خروج" onclick="logout_Click"/>
@@ -338,7 +343,7 @@
             <asp:Button ID="homePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="الرئيسية" OnClick="homePage_Click" />
             <asp:Button ID="addInvoicePage" Class="menueButton" runat="server" Style="border-radius: 30px 0px 30px 0px;" Text="إضافة فواتير" OnClick="addInvoicePage_Click" />
             <asp:Button ID="formPage" class="menueButton" runat="server" Style="border-radius: 13px;" Text="نموذج الإقرار الضريبي " OnClick="formPage_Click" />
-            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="بيانات" OnClick="summaryPage_Click" />
+            <asp:Button ID="summaryPage" class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="الملخص" OnClick="summaryPage_Click" />
             <asp:Button ID="contactPage" Class="menueButton" runat="server" Style="border-radius: 0px 30px 0px 30px;" Text="تواصل معنا" OnClick="contactPage_Click" />
 
         </div>
@@ -353,7 +358,7 @@
             <div id="sale" class="input-group">
                 <asp:TextBox ID="saleValue" ValidationGroup="saleT" class="input-field" runat="server" placeholder="القيمة" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="saleT" runat="server" ControlToValidate="saleValue" ErrorMessage="You have to enter a value "></asp:RequiredFieldValidator>
-                <asp:TextBox ID="saleDate" ValidationGroup="saleT" type="date" class="input-field" runat="server" placeholder="MM/DD/YYYY" />
+                <asp:TextBox ID="saleDate" ValidationGroup="saleT" type="date" class="input-field" runat="server" placeholder="" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="saleT" runat="server" ControlToValidate="saleDate" ErrorMessage="You have to enter a date "></asp:RequiredFieldValidator>
 
                 &nbsp;
@@ -364,11 +369,11 @@
                         <asp:ListItem Value="5%">٥٪</asp:ListItem>
                         <asp:ListItem Value="0% (Citizens)">٠٪ ( المواطنين )</asp:ListItem>
                         <asp:ListItem Value="0% (0)">٠٪ (٠)</asp:ListItem>
-                        <asp:ListItem Value="0% (Exports)">٠٪ ( الصادرات</asp:ListItem>
+                        <asp:ListItem Value="0% (Exports)">٠٪(   الصادرات )</asp:ListItem>
                         <asp:ListItem Value="Exempt">معفاة </asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ValidationGroup="saleT" runat="server" ID="saleAdjasmentdjasment" class="chech-box" Text="التعديل ( - )" /><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ValidationGroup="saleT" runat="server" ID="saleAdjasmentdjasment" class="chech-box" Text="تعديل" /><br>
 
                 <asp:Button ID="saleInvoice" ValidationGroup="saleT" runat="server" type="submit" class="submit-btn" Text="إضافة" OnClick="SaleInvoice_Click" />
            </div>
@@ -377,7 +382,7 @@
 
         <asp:TextBox ID="purchaseValue" type="float" ValidationGroup="purchaseT" class="input-field" runat="server" placeholder="القيمة" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="purchaseT" runat="server" ControlToValidate="purchaseValue" ErrorMessage="You have to enter a value "></asp:RequiredFieldValidator>
-            <asp:TextBox ID="purchaseDate" ValidationGroup="purchaseT" type="date" class="input-field" runat="server" placeholder="MM/DD/YYYY" />
+            <asp:TextBox ID="purchaseDate" ValidationGroup="purchaseT" type="date" class="input-field" runat="server" placeholder="" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ValidationGroup="purchaseT" runat="server" ControlToValidate="purchaseValue" ErrorMessage="You have to enter a date "></asp:RequiredFieldValidator>
 
             &nbsp;
@@ -392,7 +397,7 @@
                     <asp:ListItem Value="Exempt">معفاة </asp:ListItem>
                 </asp:RadioButtonList>
             </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ValidationGroup="purchaseT" runat="server" ID="PurchaseAdjasment" class="chech-box" Text="التعديل ( - )" /><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ValidationGroup="purchaseT" runat="server" ID="PurchaseAdjasment" class="chech-box" Text="تعديل" /><br>
 
             <asp:Button ID="purchaseInvoice" runat="server" ValidationGroup="purchaseT" type="submit" class="submit-btn" Text="إضافة " OnClick="PurchaseInvoice_Click" />
      </div>
